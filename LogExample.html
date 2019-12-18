@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible{
+	background-color: #252525;
+	color: #dcdcdc;
+	cursor: pointer;
+	padding: 8px;
+	width: 100% ;
+	border-style: solid;
+	text-align: left;
+	outline: none;
+	font-family: Sans-serif;
+	font-size: 12px;
+	border-bottom: 3px solid #474747;
+	border-top: 3px solid #474747;
+	border-left: 3px solid #474747;
+	border-right: 3px solid #474747;
+}
+
+.active {
+	background-color: #005893;
+	border-bottom: none;
+	border-top: 3px solid #005893;
+	border-left: 3px solid #005893;
+	border-right: 3px solid #005893;
+}
+
+.collapsible:hover {
+	background-color: #008200;
+	border-bottom: 3px solid #008200;
+	border-top: 3px solid #008200;
+	border-left: 3px solid #008200;
+	border-right: 3px solid #008200;
+}
+
+.active.collapsible:hover{ 
+	background-color: #820000;
+	border-bottom: none;
+	border-top: 3px solid #820000;
+	border-left: 3px solid #820000;
+	border-right: 3px solid #820000;
+}
+.collapsible:after {
+  content: '+';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: '-';
+}
+
+.content{
+	padding: 0 8px;
+	font-size: 12px;
+	font-family: Sans-serif;
+	display: none;
+	overflow: hidden;
+	background-color: #333333;
+	color: #dcdcdc;
+	border-bottom: 3px solid #005893;
+	border-left: 3px solid #005893;
+	border-right: 3px solid #005893;
+}
+</style>
+</head>
+<body style="background-color:black; ">
+
+<button class="collapsible"><font size="3px">Dummy function body</font> <font color="red">                              </font></button>
+<div class="content">
+<p>return_int: 1</p>
+<p>Elapsed time of this section in seconds: 0.003994</p>
+</div>
+
+<button class="collapsible"><font size="5px">Section 1</font> <font color="red">1:01,2:01,                    </font></button>
+<div class="content">
+<button class="collapsible"><font size="3px">Dummy function body</font> <font color="red">                              </font></button>
+<div class="content">
+<p>return_int: 2</p>
+<p>Elapsed time of this section in seconds: 0.000996</p>
+</div>
+
+<button class="collapsible"><font size="3px">Subsection 1.1</font> <font color="red">1:01,                         </font></button>
+<div class="content">
+<button class="collapsible"><font size="3px">Dummy function body</font> <font color="red">                              </font></button>
+<div class="content">
+<p>return_int: 3</p>
+<p>Elapsed time of this section in seconds: 0.000000</p>
+</div>
+
+<p>i: 0</p>
+<p><font color = "red">Some warning.</font></p>
+<p>Elapsed time of this section in seconds: 0.002987</p>
+</div>
+
+<button class="collapsible"><font size="3px">Subsection 2.1</font> <font color="red">2:01,                         </font></button>
+<div class="content">
+<p>j: 0</p>
+<p><font color = "red">Some warning.</font></p>
+<p>Elapsed time of this section in seconds: 0.006975</p>
+</div>
+
+<p>Sum of times of recursive subsection in seconds: 0.010958</p>
+<p>Elapsed time of this section in seconds: 0.017945</p>
+</div>
+
+<button class="collapsible"><font size="3px">Section 2</font> <font color="red">                              </font></button>
+<div class="content">
+<p>Some text.</p>
+<button class="collapsible"><font size="3px">Dummy function body</font> <font color="red">                              </font></button>
+<div class="content">
+<p>return_int: 4</p>
+<p>Elapsed time of this section in seconds: 0.001001</p>
+</div>
+
+<p>Sum of times of recursive subsection in seconds: 0.001001</p>
+<p>Elapsed time of this section in seconds: 0.020004</p>
+</div>
+
+<button class="collapsible"><font size="3px">Section 3</font> <font color="red">                              </font></button>
+<div class="content">
+<p>Some text.</p>
+<p>Elapsed time of this section in seconds: 0.000997</p>
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.display === "block") {
+			content.style.display = "none";
+		}
+		else {
+			content.style.display = "block";
+		}
+	});
+}
+</script>
+
+</body>
+</html>
